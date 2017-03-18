@@ -1,0 +1,54 @@
+    1  su - soporte
+    2  type git
+    3  ls
+    4  cd Documents/
+    5  mkdir LXS2_II-2017_mqa
+    6  cd LXS2_II-2017_mqa/
+    7  git init
+    8  tree
+    9  sudo apt-get install tree
+   10  ls
+   11  ls -l
+   12  su - soporte  
+   13  tree
+   14  git init 
+   15  tree
+   16  tree -a
+   17  git config --global user.name "Mario Quiros Araya"
+   18  git config --global user.email "marioqa@gmail.com"
+   19  ls
+   20  ls -a
+   21  ls .git/
+   22  vim .gitignore
+   23  mkdir src
+   24  mkdir misc
+   25  mkdir logs
+   26  mkdir data
+   27  touch {logs, misc,src,data}/file1
+   28  touch logs/file1
+   29  touch misc/file1
+   30  touch src/file1
+   31  touch data/file1
+   32  git add --all
+   33  git status
+   34  git commit -m "Inicio de la estructura de mi repositorio"
+   35  git status
+   36  touch data/file2
+   37  git status
+   38  last > misc/ultimo-acceso.log
+   39  head dmesg >> data/file1
+   40  head | dmesg >> data/file1
+   41  dmesg | head >> data/file1
+   42  git status
+   43  git add data/file1
+   44  git add data/file2
+   45  git status
+   46  git add data/file2git commit -m "Dos nuevos archivos"
+   47  git commit -m "Dos nuevos archivos"
+   48  git log
+   49  git remote add origin https://github.com/marioqacr/LXS2_II-2017_mqa.git
+   50  git remote -v
+   51  git push - origin master
+   52  git push -u origin master
+   53  history
+   54  history >> data/file2
