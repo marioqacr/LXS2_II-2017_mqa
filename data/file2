@@ -44,7 +44,7 @@
    44  git add data/file2
    45  git status
    46  git add data/file2git commit -m "Dos nuevos archivos"
-   47  git commit -m "Dos nuevos archivos"
+   47  git commit -m "Dos nuevos archivo"
    48  git log
    49  git remote add origin https://github.com/marioqacr/LXS2_II-2017_mqa.git
    50  git remote -v
@@ -52,3 +52,29 @@
    52  git push -u origin master
    53  history
    54  history >> data/file2
+   55  git status
+   56  git add data/file2
+   57  git status
+   58  git commit -m "el history en data/file2"
+   59  git status
+   60  git remote add origin https://github.com/marioqacr/LXS2_II-2017_mqa.git
+   61  git push -u origin master
+   62  history -52
+   63  history 52
+   64  git status
+   65  cd /
+   66  cd ~
+   67  cd Docu
+   68  cd Documents/
+   69  mkdir Academia-UCR
+   70  cd Academia-UCR
+   71  git clone https://github.com/marioqacr/LXS2_II-2017_mqa.git mi repo remoto
+   72  git clone https://github.com/marioqacr/LXS2_II-2017_mqa.git mi-repo-remoto
+   73  cd mi-repo-remoto/
+   74  ifconfig >> misc/file1
+   75  git status}
+   76  git add misc/file1
+   77  git commit - m "Modigicacion desde la casa"
+   78  git status
+   79  git push -u origin master
+   80  history > data/file2
