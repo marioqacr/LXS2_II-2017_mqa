@@ -13,7 +13,7 @@ host="localhost"
 usuario="root"
 basedatos="zipcode"
 
-argumentos="-h $host -u $usuario -p$passwd -D $basedatos -s -e "
+argumentos="--table -h $host -u $usuario -p$passwd -D $basedatos -s -e "
 while true
 do
 	read -p "Digite el nombre del distrito a buscar ( x para terminar): " distrito
@@ -21,7 +21,7 @@ do
 	if [ $distrito = 'x' ] 
 	then
 		exit 0
-	fi
+	fi 2> /dev/null
 
 	campos='SELECT provincias.prnombre AS provincia, cantones.canombre AS canton, d.dinombre AS distrito, d.dicodigo AS codigo_postal '
 	tabla=" FROM distritos d "
@@ -30,7 +30,7 @@ do
 	consulta="$campos  $tabla $joins $filtro"
 	
 
-	mysql $argumentos "SELECT provincias.prnombre AS provincia, cantones.canombre AS canton, d.dinombre AS distrito, d.dicodigo AS codigo_postal FROM distritos d JOIN cantones ON d.dicodcan =  cantones.cacodigo  JOIN provincias ON  d.dicodpro =  provincias.prcodigo WHERE dinombre LIKE '%$distrito%';"  2> /dev/null
+	mysql $argumentos "SELECT provincias.prnombre AS provincia, cantones.canombre AS canton, d.dinombre AS distrito, d.dicodigo AS codigo_postal FROM distritos d JOIN cantones ON d.dicodcan =  cantones.cacodigo  JOIN provincias ON  d.dicodpro =  provincias.prcodigo WHERE dinombre LIKE '%$distrito%' order by d.dicodigo;"  2> /dev/null
 	echo "********************************************************"
 	echo ""
 	echo "" 
