@@ -28,9 +28,9 @@ do
 	joins=" JOIN cantones ON d.dicodcan =  cantones.cacodigo  JOIN provincias ON  d.dicodpro =  provincias.prcodigo "
 	filtro=" WHERE dinombre LIKE '%$distrito%';"
 	consulta="$campos  $tabla $joins $filtro"
-	
+	echo $consulta
 
-	mysql $argumentos "SELECT provincias.prnombre AS provincia, cantones.canombre AS canton, d.dinombre AS distrito, d.dicodigo AS codigo_postal FROM distritos d JOIN cantones ON d.dicodcan =  cantones.cacodigo  JOIN provincias ON  d.dicodpro =  provincias.prcodigo WHERE dinombre LIKE '%$distrito%' order by d.dicodigo;"  2> /dev/null
+	mysql $argumentos "$consulta"
 	echo "********************************************************"
 	echo ""
 	echo "" 
